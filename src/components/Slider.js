@@ -8,7 +8,7 @@ import { sliderItems } from "../data";
 
 const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 85vh;
   display: flex;
   position: relative;
   overflow: hidden;
@@ -23,7 +23,7 @@ const Arrow = styled.div`
   justify-content: center;
   background-color: seashell;
   position: absolute;
-  top: -100px;
+  top: -20px;
   bottom: 0;
   margin: auto;
   left: ${(props) => props.direction === "left" && "10px"};
@@ -81,7 +81,7 @@ const Button = styled.button`
   font-size: 20px;
   background: transparent;
   cursor: pointer;
-  box-shadow: black 4px 4px 1px;
+  box-shadow: black 5px 5px 1px;
 `;
 
 const Slider = () => {
@@ -94,7 +94,7 @@ const Slider = () => {
       </Arrow>
       <Wrapper slideIndex={slideIndex}>
         {sliderItems.map((item) => (
-              <Slide bg={item.bg}>
+              <Slide bg={item.bg} key={item.id}>
                 <ImageContainer>
                   <Image src={item.img} />
                 </ImageContainer>
